@@ -1,0 +1,50 @@
+<p id="notice"><%= notice %></p>
+
+
+<div class="card" style="width: 65rem;" display = "flex";
+  align-items = "center";>
+
+  <img src="..." class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title"><p>
+  <strong>Title:</strong>
+  <%= @mybook.title %>
+</p>
+</h5>
+<hr>
+    <p class="card-text"><p>
+  <strong>Description:</strong>
+  <%= @mybook.description %>
+</p>
+<hr>
+<p>
+  <strong>Instagram:</strong>
+  <%= @mybook.email %>
+</p>
+<hr>
+<p>
+  <strong>Google Pay/Whatsapp:</strong>
+  <%= @mybook.phone %>
+</p>
+<br>
+<div class="d-grid gap-2 d-md-block">
+  <%= link_to 'Edit', edit_mybook_path(@mybook), class:"btn btn-success" %>  |  
+<%= link_to 'Back', mybooks_path, class:"btn btn-secondary" %> 
+  
+</div>
+</p>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+

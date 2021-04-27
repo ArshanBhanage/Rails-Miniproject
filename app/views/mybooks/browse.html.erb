@@ -1,0 +1,48 @@
+<%# commented line %>
+
+<% if user_signed_in? %>
+<p id="notice"><%= notice %></p>
+
+<h1>All Books</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Image</th>
+      <th>Description</th>
+      <%#<th>Email</th>
+      <th>Phone</th>
+      <th>User Id</th>%>
+
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @mybooks.each do |mybook| %>
+      <tr>
+       <td> 
+       <%= link_to mybook.title, mybook %></td>
+       <td><%= mybook.image %></td>                                                          
+        <td><%= mybook.description %></td>
+       <%# commented line  <td> mybook.email </td> %>
+        <%#<td> mybook.user_id </td>%>
+        <%#<td> mybook.phone </td>%>
+
+
+        <%#<td><%= link_to 'Show details', mybook, class:"btn btn-primary"  %>
+        <% end %>
+      </tr>
+    
+  </tbody>
+</table>
+
+<br>
+
+
+
+<% else %>
+<h1>Home Page</h1>
+<hr>
+<% end %>

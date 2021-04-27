@@ -1,0 +1,54 @@
+<%= form_with(model: mybook) do |form| %>
+  <% if mybook.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(mybook.errors.count, "error") %> prohibited this mybook from being saved:</h2>
+
+      <ul>
+        <% mybook.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div class="field">
+    <% if mybook.image.attached?; %>
+       <%= image_tag mybook.image, style: "width:200px; display: block" %>
+       <% end %>
+
+    <%= form.label :image %>
+    <%= form.file_field :image, class: "form-control" %>  
+
+     
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_field :description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :email %>
+    <%= form.text_field :email %>
+  </div>
+
+<div class="field">
+    <%= form.label :user_id %>
+    <%= form.number_field :user_id, id: :mybook_user_id, class:"form-control", value: current_user.id, type: :hidden %>
+  </div>
+  
+
+  <div class="field">
+    <%= form.label :phone %>
+    <%= form.text_field :phone %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
