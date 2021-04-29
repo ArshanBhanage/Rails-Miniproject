@@ -7,6 +7,339 @@
         margin-bottom: 10px; /* Added */
 }
 
-body {
-  background-color: lightblue;
+
+
+* {
+	box-sizing: border-box; 
 }
+
+html {
+  background: #E2E2E2;
+}
+
+body {
+	background: #E2E2E2;
+	margin:0;
+	padding:0; 
+	font-family: 'Lato', sans-serif;
+}
+
+.login-form-wrap {
+	background: radial-gradient(ellipse at center,  rgba(81,112,173,1) 0%,rgba(53,84,147,1) 100%);
+	border:1px solid #2d416d;
+	box-shadow: 0 1px #5670A4 inset, 0 0 10px 5px rgba(0, 0, 0, 0.1);
+	border-radius: 5px;
+	width: 560px;
+	height: 480px;
+	margin: 60px auto;
+	padding: 50px 30px 0 30px;
+	text-align: center;
+	text-decoration: none;
+	
+	h1 {
+		margin: 0 0 50px 0;
+		padding: 0;  
+		font-size: 26px;
+		text-decoration: none;
+		color: #fff;
+	}
+	h5 {
+		margin-top: 40px;
+	}
+	h5 > a {
+		font-size: 14px;
+		color: #fff;
+		text-decoration: none; 
+		font-weight: 400;
+	}
+}
+
+.login-form {
+
+	& input[type="email"], input[type="password"],  {
+		width: 100%; 
+		border: 1px solid #314d89;
+		outline: none;
+		padding: 12px 20px;
+		color: #afafaf;
+		font-weight: 400;
+	  font-family: 'Lato', sans-serif;
+    cursor:pointer;
+	}
+
+	& input[type="email"] {
+		border-bottom: none; 
+		border-radius: 4px 4px 0 0;
+		padding-bottom: 13px;
+		box-shadow: 0 -1px 0 #E0E0E0 inset,
+					0 1px 2px rgba(0, 0, 0, 0.23) inset;
+	}
+
+	& input[type="password"] {
+		border-top: none; 
+		border-radius: 0 0 4px 4px;
+		box-shadow: 0 -1px 2px rgba(0, 0, 0, 0.23) inset,
+					0 1px 2px rgba(255, 255, 255, 0.1);
+	}
+
+	& input[type="submit"] {
+	  font-family: 'Lato', sans-serif;
+	  font-weight: 400;
+		background: linear-gradient(to bottom,  rgba(224,224,224,1) 0%,rgba(206,206,206,1) 100%);
+		display: block;
+		margin: 20px auto 0 auto;
+		width: 100%;
+		border: none;
+		border-radius: 3px;
+		padding: 8px;
+		font-size: 17px;
+		color: #636363;
+		text-shadow: 0 1px 0 rgba(255, 255, 255, 0.45);
+		font-weight: 700;
+		box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.17), 0 1px 0 rgba(255, 255, 255, 0.36) inset;
+    
+    &:hover {
+      background: #DDD; 
+    }
+    
+    &:active {
+      padding-top: 9px;
+      padding-bottom: 7px;
+      background: #C9C9C9; 
+    }
+	}
+}
+
+//2nd card style
+
+.login-form-wrap2 {
+	
+	background-color: EEE9E8;
+	border:1px solid #040404;
+	border-radius: 5px;
+	width: 860px;
+	height: 480px;
+	margin: 60px auto;
+	padding: 50px 30px 0 30px;
+	text-align: center;
+	text-decoration: none;
+	
+	h1 {
+		margin: 0 0 50px 0;
+		padding: 0;  
+		font-size: 26px;
+		color: #fff;
+		text-decoration: none;
+	}
+	h5 {
+		margin-top: 40px;
+		text-decoration: none;
+	}
+	h5 > a {
+		font-size: 14px;
+		color: #fff;
+		text-decoration: none; 
+		font-weight: 400;
+		text-decoration: none;
+	}
+}
+
+.login-form2 {
+
+	& input[type="email"], input[type="password"],  {
+		width: 100%; 
+		border: 1px solid #314d89;
+		outline: none;
+		padding: 12px 20px;
+		color: #afafaf;
+		font-weight: 400;
+	  font-family: 'Lato', sans-serif;
+    cursor:pointer;
+    text-decoration: none;
+	}
+
+	& input[type="email"] {
+		border-bottom: none; 
+		border-radius: 4px 4px 0 0;
+		padding-bottom: 13px;
+		text-decoration: none;
+		box-shadow: 0 -1px 0 #E0E0E0 inset,
+					0 1px 2px rgba(0, 0, 0, 0.23) inset;
+	}
+
+	& input[type="password"] {
+		border-top: none;
+		text-decoration: none; 
+		border-radius: 0 0 4px 4px;
+		box-shadow: 0 -1px 2px rgba(0, 0, 0, 0.23) inset,
+					0 1px 2px rgba(255, 255, 255, 0.1);
+	}
+
+	& input[type="submit"] {
+	  font-family: 'Lato', sans-serif;
+	  font-weight: 400;
+		background: linear-gradient(to bottom,  rgba(224,224,224,1) 0%,rgba(206,206,206,1) 100%);
+		display: block;
+		margin: 20px auto 0 auto;
+		width: 100%;
+		text-decoration: none;
+		border: none;
+		border-radius: 3px;
+		padding: 8px;
+		font-size: 17px;
+		color: #636363;
+		text-shadow: 0 1px 0 rgba(255, 255, 255, 0.45);
+		font-weight: 700;
+		box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.17), 0 1px 0 rgba(255, 255, 255, 0.36) inset;
+    
+    &:hover {
+      background: #DDD; 
+      text-decoration: none;
+    }
+    
+    &:active {
+      padding-top: 9px;
+      padding-bottom: 7px;
+      background: #C9C9C9; 
+      text-decoration: none;
+    }
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+//
+.container {
+  margin: 0 auto;
+  max-width: 910px;
+}
+
+.choose {
+  width: 100%;
+  height: 40px;
+}
+.fa {
+  margin-right: 20px;
+  font-size: 30px;
+  color: gray;
+  float: right;
+}
+/******************************************
+Book stuff
+*******************************************/
+
+.book {
+  display: inline-block;
+  width: 230px;
+  height: 390px;
+  box-shadow: 0 0 20px #aaa;
+  margin: 25px;
+  padding: 10px 10px 0 10px;
+  vertical-align: top;
+  transition: height 1s;
+}
+/* star button */
+.book:after {
+  font-family: FontAwesome;
+  content: "\f006";
+  font-size: 35px;
+  position: relative;
+  left: -.1cm;
+  top: -1.6cm;
+  float: right;
+}
+
+.cover {
+  border: 2px solid gray;
+  height: 80%;
+  overflow: hidden;
+}
+
+.cover img {
+  width: 100%;
+}
+
+.book p {
+  margin-top: 12px;
+  font-size: 20px;
+  text-decoration:none; 
+}
+
+.book .author {
+  font-size: 13px;
+  text-decoration:none; 
+}
+@media (max-width: 941px) {
+  .container {
+    max-width: 700px;
+  }
+  .book {
+    margin: 49px;
+  }
+}
+@media (max-width: 730px) {
+  .book {
+    display: block;
+    margin: 0 auto;
+    margin-top: 50px;
+  }
+  .cover {
+    
+  }
+}
+
+/*********************************
+other
+**********************************/
+
+h1 {
+  color: gray;
+  text-align: center;
+  font-size: 50px;
+  margin-bottom: -3px;
+  text-decoration:none; 
+}
+
+/**********************************
+display change
+***********************************/
+/*book height smaller, cover opacity, move text onto cover and star too
+animate it */
+#list-th:target .book {
+  height: 100px;
+  width: 250px;
+  padding: 10px;
+  margin: 25px auto 25px auto;
+}
+
+#list-th:target .cover {
+  width: 246px;
+}
+
+#list-th:target img {
+  opacity: .1;
+}
+
+#list-th:target p {
+  margin-top: -62px;
+  margin-left: 20px;
+}
+/* remove button? */
+#large-th:target .book {
+  height: 390px;
+}
+
+/***********************************
+star animation
+***********************************/
+/***********************************
+zoom on click
+***********************************/

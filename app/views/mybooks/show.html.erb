@@ -1,16 +1,22 @@
+
+
 <p id="notice"><%= notice %></p>
 
 
 <div class="card" style="width: 65rem;" display = "flex";
   align-items = "center";>
 
-  <img src="..." class="card-img-top" alt="...">
+  
   <div class="card-body">
     <h5 class="card-title"><p>
+
+<%= image_tag("Bookphoto/gv.png", height:"150px", width:"100px", class:"center") %><br><br>
+
   <strong>Title:</strong>
   <%= @mybook.title %>
 </p>
 </h5>
+
 <hr>
     <p class="card-text"><p>
   <strong>Description:</strong>
@@ -23,7 +29,7 @@
 </p>
 <hr>
 <p>
-  <strong>Google Pay/Whatsapp:</strong>
+  <strong>Google Pay/ Whatsapp:</strong>
   <%= @mybook.phone %>
 </p>
 <br>

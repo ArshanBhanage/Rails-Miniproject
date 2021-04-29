@@ -1,44 +1,50 @@
 <%# commented line %>
-
 <% if user_signed_in? %>
 <p id="notice"><%= notice %></p>
+    <h1> List of all books</h1>
 
-<h1>All Books</h1>
+          <% @mybooks.each do |mybook| %>  
+<div id="large-th">
+  <div class="container">
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Image</th>
-      <th>Description</th>
-      <%#<th>Email</th>
-      <th>Phone</th>
-      <th>User Id</th>%>
+    <br>
 
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+    <div class="choose">
+      <a href="#list-th"><i class="fa fa-th-list" aria-hidden="true"></i></a>
+      <a href="#large-th"><i class="fa fa-th-large" aria-hidden="true"></i></a>
+    </div>
 
-  <tbody>
-    <% @mybooks.each do |mybook| %>
-      <tr>
-       <td> 
-       <%= link_to mybook.title, mybook %></td>
-       <td><%= mybook.image %></td>                                                          
-        <td><%= mybook.description %></td>
-       <%# commented line  <td> mybook.email </td> %>
-        <%#<td> mybook.user_id </td>%>
-        <%#<td> mybook.phone </td>%>
+    <div id="list-th">
+
+      <div class="book read">
+        <div class="cover">
+          <%= image_tag("Bookphoto/gv.png") %>
+        </div>
+        <div class="description", style="text-decoration: none">
+                 <p><%= link_to mybook.title, mybook, class:"title", style:"color:black", style:"text-decoration: none" %><br>
+           <span ><%= link_to mybook.description, class:"author" %></span></p>
+        </div>
+      </div><br>
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
 
 
         <%#<td><%= link_to 'Show details', mybook, class:"btn btn-primary"  %>
-        <% end %>
-      </tr>
+          <% end %>
+      
     
-  </tbody>
-</table>
 
-<br>
+
 
 
 

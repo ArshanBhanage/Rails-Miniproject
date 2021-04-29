@@ -1,3 +1,5 @@
+<section class="login-form-wrap2">
+
 <%= form_with(model: mybook) do |form| %>
   <% if mybook.errors.any? %>
     <div id="error_explanation">
@@ -12,41 +14,39 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
-  </div>
+    
+    <%= form.text_field :title, class:"form-control", placeholder:"Title" %>
+  </div><br>
 
   <div class="field">
     <% if mybook.image.attached?; %>
        <%= image_tag mybook.image, style: "width:200px; display: block" %>
        <% end %>
 
-    <%= form.label :image %>
+
     <%= form.file_field :image, class: "form-control" %>  
 
      
-  </div>
+  </div><br>
 
   <div class="field">
-    <%= form.label :description %>
-    <%= form.text_field :description %>
-  </div>
+
+    <%= form.text_field :description, class:"form-control", placeholder:"Book Description" %>
+  </div><br>
 
   <div class="field">
-    <%= form.label :email %>
-    <%= form.text_field :email %>
-  </div>
+    
+    <%= form.text_field :email, class:"form-control", placeholder:"Instagram" %>
+  </div><br>
 
 <div class="field">
-    <%= form.label :user_id %>
     <%= form.number_field :user_id, id: :mybook_user_id, class:"form-control", value: current_user.id, type: :hidden %>
   </div>
   
 
   <div class="field">
-    <%= form.label :phone %>
-    <%= form.text_field :phone %>
-  </div>
+    <%= form.text_field :phone, class:"form-control", placeholder:"Phone" %>
+  </div><br>
 
   <div class="actions">
     <%= form.submit %>
