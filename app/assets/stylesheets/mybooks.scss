@@ -261,21 +261,23 @@ Book stuff
   border: 2px solid gray;
   height: 80%;
   overflow: hidden;
+
 }
 
 .cover img {
   width: 100%;
+  height:100%;
 }
 
 .book p {
   margin-top: 12px;
   font-size: 20px;
-  text-decoration:none; 
+
+
 }
 
 .book .author {
   font-size: 13px;
-  text-decoration:none; 
 }
 @media (max-width: 941px) {
   .container {
@@ -305,7 +307,7 @@ h1 {
   text-align: center;
   font-size: 50px;
   margin-bottom: -3px;
-  text-decoration:none; 
+   
 }
 
 /**********************************

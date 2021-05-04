@@ -1,34 +1,28 @@
 <%# commented line %>
 <% if user_signed_in? %>
-<p id="notice"><%= notice %></p>
+<p id="notice"><%= notice %></p><br>
     <h1> List of all books</h1>
 
           <% @mybooks.each do |mybook| %>  
-<div id="large-th">
-  <div class="container">
 
-    <br>
 
-    <div class="choose">
-      <a href="#list-th"><i class="fa fa-th-list" aria-hidden="true"></i></a>
-      <a href="#large-th"><i class="fa fa-th-large" aria-hidden="true"></i></a>
-    </div>
 
-    <div id="list-th">
+  
+
+
 
       <div class="book read">
         <div class="cover">
-          <%= image_tag("Bookphoto/gv.png") %>
+          <%= image_tag mybook.image, class: "img img-fluid" %>
         </div>
         <div class="description", style="text-decoration: none">
-                 <p><%= link_to mybook.title, mybook, class:"title", style:"color:black", style:"text-decoration: none" %><br>
-           <span ><%= link_to mybook.description, class:"author" %></span></p>
+                 <p><%= link_to mybook.title, mybook, class:"btn default", style:"text-decoration: none" %>
+           <%#<span ><%= link_to mybook.description, class:"author" ></span>%></p>
         </div>
-      </div><br>
+      </div>
 
-    </div>
-  </div>
-</div>
+
+
 
 
 

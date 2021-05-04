@@ -10,7 +10,10 @@
   <div class="card-body">
     <h5 class="card-title"><p>
 
-<%= image_tag("Bookphoto/gv.png", height:"150px", width:"100px", class:"center") %><br><br>
+
+   <%= image_tag(@mybook.image, height:"150px", width:"100px", class:"center") %><br><br>
+
+<br><br>
 
   <strong>Title:</strong>
   <%= @mybook.title %>
@@ -22,6 +25,9 @@
   <strong>Description:</strong>
   <%= @mybook.description %>
 </p>
+
+
+
 <hr>
 <p>
   <strong>Instagram:</strong>

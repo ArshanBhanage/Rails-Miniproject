@@ -75,10 +75,8 @@ class MybooksController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def mybook_params
-      params.require(:mybook).permit(:title, :image, :description, :email, :phone, :user_id)
-      #mybook.image.attach(params[:image])
-      #@mybook.image.attach(io: File.open('app/assets/images/placeholder.png'), filename: 'placeholder.png', content_type: 'image/png') unless Mybook.image.first.nil?
-        
+      params.require(:mybook).permit(:title, :description, :email, :phone, :user_id, :image)
+       
        
     end
 end

@@ -19,12 +19,9 @@
   </div><br>
 
   <div class="field">
-    <% if mybook.image.attached?; %>
-       <%= image_tag mybook.image, style: "width:200px; display: block" %>
-       <% end %>
-
-
-    <%= form.file_field :image, class: "form-control" %>  
+    
+    <%= form.file_field :image, class:"form-control" %>  
+  
 
      
   </div><br>
