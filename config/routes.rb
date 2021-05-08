@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'pages/index'
   devise_for :users
   resources :mybooks
   #get 'home/index'
@@ -6,5 +7,6 @@ Rails.application.routes.draw do
   root 'mybooks#browse'
   get 'home/about'
   get 'search', to: "mybooks#search"
+  
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

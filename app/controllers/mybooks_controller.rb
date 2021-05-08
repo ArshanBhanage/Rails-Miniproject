@@ -4,7 +4,9 @@ class MybooksController < ApplicationController
   before_action :correct_user, only: [:edit, :update, :destroy]
   # GET /mybooks or /mybooks.json
   def index
-    @mybooks = Mybook.all
+    @q = Mybook.ransack(params[:q])
+    @mybooks = @q.result
+    
   end
 
   # GET /mybooks/1 or /mybooks/1.json
@@ -13,7 +15,12 @@ class MybooksController < ApplicationController
 
   def browse
     @mybooks = Mybook.all
+    
   end
+
+ 
+
+
 
   # GET /mybooks/new
   def new
@@ -75,7 +82,7 @@ class MybooksController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def mybook_params
-      params.require(:mybook).permit(:title, :description, :email, :phone, :user_id, :image)
+      params.require(:mybook).permit(:title, :description, :email, :phone, :user_id, :image, :seme, :prize)
        
        
     end

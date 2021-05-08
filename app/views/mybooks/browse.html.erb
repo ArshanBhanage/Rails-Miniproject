@@ -3,11 +3,9 @@
 <p id="notice"><%= notice %></p><br>
     <h1> List of all books</h1>
 
-          <% @mybooks.each do |mybook| %>  
+    <%= render 'home/header' %>
 
-
-
-  
+          <% @mybooks.each do |mybook| %>
 
 
 
@@ -18,6 +16,7 @@
         <div class="description", style="text-decoration: none">
                  <p><%= link_to mybook.title, mybook, class:"btn default", style:"text-decoration: none" %>
            <%#<span ><%= link_to mybook.description, class:"author" ></span>%></p>
+
         </div>
       </div>
 
@@ -31,7 +30,7 @@
   
 
 
-
+             
 
         <%#<td><%= link_to 'Show details', mybook, class:"btn btn-primary"  %>
           <% end %>
@@ -42,7 +41,5 @@
 
 
 
-<% else %>
-<h1>Home Page</h1>
-<hr>
+
 <% end %>

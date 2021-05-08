@@ -6,6 +6,8 @@ class CreateMybooks < ActiveRecord::Migration[6.1]
       t.string :description
       t.string :email
       t.string :phone
+      t.integer :seme
+      t.integer :prize
 
       t.timestamps
     end

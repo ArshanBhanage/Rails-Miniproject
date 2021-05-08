@@ -1,85 +1,75 @@
-<div id="large-th">
-  <div class="container">
-    <h1> A list of books</h1>
-    <br>
-    <div class="choose">
-      <a href="#list-th"><i class="fa fa-th-list" aria-hidden="true"></i></a>
-      <a href="#large-th"><i class="fa fa-th-large" aria-hidden="true"></i></a>
-    </div>
-    <div id="list-th">
-      <div class="book read">
-        <div class="cover">
-          <img src="https://s-media-cache-ak0.pinimg.com/564x/f9/8e/2d/f98e2d661445620266c0855d418aab71.jpg">
-        </div>
-        <div class="description">
-          <p class="title">Frankenstein<br>
-            <span class="author">Mary Shelley</span></p>
-        </div>
-      </div>
-      <div class="book read">
-        <div class="cover">
-          <img src="https://alysbcohen.files.wordpress.com/2015/01/little-princess-book-cover.jpg">
-        </div>
-        <div class="description">
-          <p class="title">A Little Princess<br>
-            <span class="author">Frances Hodgson Burnett</span></p>
-        </div>
-      </div>
-      <div class="book unread">
-        <div class="cover">
-          <img src="http://www.publishersweekly.com/images/data/ARTICLE_PHOTO/photo/000/028/28129-1.JPG">
-        </div>
-        <div class="description">
-          <p class="title">Roughing It</br>
-            <span class="author">Mark Twain</span></p>
-        </div>
-      </div>
-      <div class="book unread">
-        <div class="cover">
-          <img src="http://talkingwriting.com//sites/default/files/Bird-by-Bird-image1.jpg">
-        </div>
-        <div class="description">
-          <p class="title">Bird By Bird</br>
-            <span class="author">Anne Lamott</span></p>
-        </div>
-      </div>
-<div class="book read">
-        <div class="cover">
-          <img src="http://d.gr-assets.com/books/1414348859l/23209971.jpg">
-        </div>
-        <div class="description">
-          <p class="title">Girl at War</br>
-            <span class="author">Sara Novic</span></p>
-        </div>
-      </div>
-<div class="book read">
-        <div class="cover">
-          <img src="http://prodimage.images-bn.com/pimages/9780062315007_p0_v2_s192x300.jpg">
-        </div>
-        <div class="description">
-          <p class="title">The Alchemist</br>
-            <span class="author">Paulo Coelho</span></p>
-        </div>
-      </div>
-<div class="book read">
-        <div class="cover">
-          <img src="http://eastchapelhillobserver.com/wp-content/uploads/2015/02/amazondotcom.jpg">
-        </div>
-        <div class="description">
-          <p class="title">Anne of Green Gables</br>
-            <span class="author">Lucy Maud Montgomery</span></p>
-        </div>
-      </div>
-<div class="book read">
-        <div class="cover">
-          <img src="http://www.penguinbooksindia.com/sites/default/files/book_image/9780143416319.jpg">
-        </div>
-        <div class="description">
-          <p class="title">Animal Farm</br>
-            <span class="author">George Orwell</span></p>
-        </div>
-      </div>
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  font-family: "Lato", sans-serif;
+}
 
-    </div>
-  </div>
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+</style>
+</head>
+<body>
+
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="#">About</a>
+  <a href="#">Services</a>
+  <a href="#">Clients</a>
+  <a href="#">Contact</a>
 </div>
+
+<h2>Animated Sidenav Example</h2>
+<p>Click on the element below to open the side navigation menu.</p>
+<span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>
+
+<script>
+function openNav() {
+  document.getElementById("mySidenav").style.width = "250px";
+}
+
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+}
+</script>
+   
+</body>
+</html> 

@@ -1,3 +1,19 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,7 +24,7 @@ body {font-family: "Lato", sans-serif;}
 
 .sidebar {
   height: 100%;
-  width: 160px;
+  width: 140px;
   position: fixed;
   z-index: 1;
   top: 55px;
@@ -44,10 +60,13 @@ body {font-family: "Lato", sans-serif;}
 <body>
 
 <div class="sidebar">
-  <a href="#home"><i class="fa fa-fw fa-home"></i> Home</a>
-  <a href="#services"><i class="fa fa-fw fa-wrench"></i> Services</a>
-  <a href="#clients"><i class="fa fa-fw fa-user"></i> Clients</a>
-  <a href="#contact"><i class="fa fa-fw fa-envelope"></i> Contact</a>
+  <% if user_signed_in? %>
+  <a href="#services"><%= link_to 'Edit Profile', edit_user_registration_path, class:'nav-link' %></a>
+  <a href="#clients"><%= link_to 'Sign Out', destroy_user_session_path, method: :delete, class:'nav-link' %></a>
+
+  <% end %>
+
+  <a href="#contact"><%= link_to 'About Us', home_about_path %></a>
 </div>
 
 
@@ -61,27 +80,19 @@ body {font-family: "Lato", sans-serif;}
 <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
  
 <div class="container-fluid">
-  <%= link_to 'Book Bank', root_path, class:"navbar-brand" %>
+  <%= link_to 'Book Bank', root_path, class:"navbar-brand", style:"font-size: 160%" %>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-         <li class="nav-item">
-          <%= link_to 'About Us', home_about_path, class:'nav-link' %>
-        </li>
-        
+     
 
         
         
       <% if user_signed_in? %>
-        <li class="nav-item">
-          <%= link_to 'Sign Out', destroy_user_session_path, method: :delete, class:'nav-link' %>
-        </li>
-        <li class="nav-item">
-          <%= link_to 'Edit Profile', edit_user_registration_path, class:'nav-link' %>
-        </li>
+
 
         <li class="nav-item">
           <%= link_to 'My books', mybooks_path, class:'nav-link' %>
@@ -105,13 +116,13 @@ body {font-family: "Lato", sans-serif;}
 
 
       </ul>
-      <form class="d-flex", action="/search">
-        <input class="form-control me-2" name="q" type="search" placeholder="Search" aria-label="Search">
+      <form class="d-flex" >
+        <input class="form-control me-2"  type="search" placeholder="Search" aria-label="Search">
         <button class="btn btn-outline-success" type="submit">Search</button>
       </form>
     </div>
   </div>
-</nav>
+</nav><br>
 
 
 

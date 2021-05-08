@@ -1,5 +1,5 @@
 <section class="login-form-wrap2">
-
+    <%= render 'home/header' %>
 <%= form_with(model: mybook) do |form| %>
   <% if mybook.errors.any? %>
     <div id="error_explanation">
@@ -42,10 +42,22 @@
   
 
   <div class="field">
-    <%= form.text_field :phone, class:"form-control", placeholder:"Phone" %>
+    <%= form.text_field :phone,  class:"form-control", placeholder:"Phone" %>
+  </div><br>
+
+    <div class="field">
+    <%= form.text_field :sem,  class:"form-control", placeholder:"Sem" %>
+  </div><br>
+
+      <div class="field">
+    <%= form.text_field :price, class:"form-control", placeholder:"Price" %>
+
+   
   </div><br>
 
   <div class="actions">
     <%= form.submit %>
   </div>
+
+
 <% end %>

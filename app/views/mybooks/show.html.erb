@@ -1,52 +1,106 @@
 
 
 <p id="notice"><%= notice %></p>
-
-
-<div class="card" style="width: 65rem;" display = "flex";
-  align-items = "center";>
-
-  
-  <div class="card-body">
-    <h5 class="card-title"><p>
-
-
-   <%= image_tag(@mybook.image, height:"150px", width:"100px", class:"center") %><br><br>
-
 <br><br>
 
-  <strong>Title:</strong>
-  <%= @mybook.title %>
-</p>
-</h5>
+    <%= render 'home/header' %>
 
-<hr>
-    <p class="card-text"><p>
-  <strong>Description:</strong>
-  <%= @mybook.description %>
-</p>
+<!DOCTYPE html>
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <head>
+    
+    <!-- CSS property to place div
+      side by side -->
+    <style>
+      #leftbox {
+        float:left;
+        background:White;
+        width:35%;
+        height:450px;
+      }
+      #middlebox{
+        float:left;
+        background:White;
+        width:60%;
+        height:450px;
+      }
 
-
-
-<hr>
-<p>
-  <strong>Instagram:</strong>
-  <%= @mybook.email %>
-</p>
-<hr>
-<p>
-  <strong>Google Pay/ Whatsapp:</strong>
-  <%= @mybook.phone %>
-</p>
-<br>
-<div class="d-grid gap-2 d-md-block">
-  <%= link_to 'Edit', edit_mybook_path(@mybook), class:"btn btn-success" %>  |  
-<%= link_to 'Back', mybooks_path, class:"btn btn-secondary" %> 
+      h1{
+        color:green;
+        text-align:center;
+      }
+    </style>
+  </head>
   
+  <body>
+    <div id = "boxes", class="border border-4">
+     
+      
+      <div id = "leftbox"><br>
+<div class="w3-container">
+<%= image_tag(@mybook.image, height:"100%", width:"100%", class:"center") %>
+      </div>
+      </div>
+      <div id = "middlebox">
+        <br>
+  <div class="w3-container">      
+
+    
+<div class="w3-container">
+    <strong>Title:</strong>
+  <%= @mybook.title %><br>
+</div><br>
+
+<div class="w3-container">
+  <strong>Description:</strong>
+  <%= @mybook.description %><br>
+</div><br>
+
+<div class="w3-container">
+  <strong>Sem:</strong>
+  <%= @mybook.seme %><br>
+</div><br>
+
+<div class="w3-container">
+  <strong>Price:</strong>
+  <%= @mybook.prize %><br>
+</div><br>
+
+<div class="w3-container">
+    <strong>Instagram:</strong>
+  <%= @mybook.email %><br>
+</div><br>
+<div class="w3-container">
+    <strong>Google Pay/ Whatsapp:</strong>
+  <%= @mybook.phone %><br>
+</div><br>
+<div class="w3-container">
+  <div class="d-grid gap-2 d-md-block">
+  
+<%= link_to 'Back', mybooks_path, class:"btn btn-secondary" %> 
+</div>  
 </div>
-</p>
+</div>
+      </div>
+
     </div>
-</div>
+  </body>
+</html>         
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
