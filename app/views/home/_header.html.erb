@@ -1,78 +1,99 @@
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <!DOCTYPE html>
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
-body {font-family: "Lato", sans-serif;}
+body {
+  font-family: "Lato", sans-serif;
+}
 
-.sidebar {
+.sidenav {
   height: 100%;
-  width: 140px;
+  width: 0;
   position: fixed;
   z-index: 1;
   top: 55px;
   left: 0;
-  background-color: #111;
+  background-color: #ffffff;
   overflow-x: hidden;
-  padding-top: 16px;
+  transition: 0.3s;
+  padding-top: 60px;
+  border: 1px solid #0062cc;
 }
 
-.sidebar a {
-  padding: 6px 8px 6px 16px;
+.sidenav a {
+  padding: 8px 8px 8px 32px;
   text-decoration: none;
-  font-size: 20px;
-  color: #818181;
+  font-size: 25px;
+  color: #ffffff;
   display: block;
+  transition: 0.3s;
 }
 
-.sidebar a:hover {
+.sidenav a:hover {
   color: #f1f1f1;
 }
 
-.main {
-  margin-left: 160px; /* Same as the width of the sidenav */
-  padding: 0px 10px;
+.sidenav .closebtn1 {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
 }
 
 @media screen and (max-height: 450px) {
-  .sidebar {padding-top: 15px;}
-  .sidebar a {font-size: 18px;}
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
 }
 </style>
 </head>
 <body>
 
-<div class="sidebar">
+<span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; </span>
+<div id="mySidenav" class="sidenav" >
+  <a href="javascript:void(0)" class="closebtn1" onclick="closeNav()" style="color: #0062cc">&times;</a>
   <% if user_signed_in? %>
-  <a href="#services"><%= link_to 'Edit Profile', edit_user_registration_path, class:'nav-link' %></a>
-  <a href="#clients"><%= link_to 'Sign Out', destroy_user_session_path, method: :delete, class:'nav-link' %></a>
+  <a href="#services" ><%= link_to 'Edit Profile', edit_user_registration_path, class:'nav-link', style:"color: #0062cc" %></a>
+  <a href="#clients"><%= link_to 'Sign Out', destroy_user_session_path, method: :delete, class:'nav-link', style:"color: #0062cc" %></a>
 
   <% end %>
 
-  <a href="#contact"><%= link_to 'About Us', home_about_path %></a>
+  <a href="#contact"><%= link_to 'About Us', home_about_path, style:"color: #0062cc" %></a>
 </div>
 
 
-     
+
+
+<script>
+function openNav() {
+  document.getElementById("mySidenav").style.width = "190px";
+}
+
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+}
+</script>
+   
 </body>
 </html> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
