@@ -7,8 +7,7 @@
 
 <!DOCTYPE html>
 <html>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
   <head>
     
     <!-- CSS property to place div
@@ -35,57 +34,32 @@
   </head>
   
   <body>
-    <div id = "boxes", class="border border-4">
-     
-      
-      <div id = "leftbox"><br>
-<div class="w3-container">
-<%= image_tag(@mybook.image, height:"100%", width:"100%", class:"center") %>
-      </div>
-      </div>
-      <div id = "middlebox">
-        <br>
-  <div class="w3-container">      
-
-    
-<div class="w3-container">
+<div class="container">
+  <div class="container" style="float: left">
+    <%= image_tag(@mybook.image, height:"100%", width:"10%", class:"center") %>
+    </div>
+    <div class="container">
     <strong>Title:</strong>
   <%= @mybook.title %><br>
 </div><br>
 
-<div class="w3-container">
-  <strong>Description:</strong>
+<div class="container">
+  <strong>Sem:</strong>
   <%= @mybook.description %><br>
 </div><br>
 
-<div class="w3-container">
-  <strong>Sem:</strong>
-  <%= @mybook.seme %><br>
-</div><br>
 
-<div class="w3-container">
-  <strong>Price:</strong>
-  <%= @mybook.prize %><br>
-</div><br>
 
-<div class="w3-container">
-    <strong>Instagram:</strong>
+<div class="container">
+    <strong>Price:</strong>
   <%= @mybook.email %><br>
 </div><br>
-<div class="w3-container">
+<div class="container">
     <strong>Google Pay/ Whatsapp:</strong>
   <%= @mybook.phone %><br>
-</div><br>
-<div class="w3-container">
-  <div class="d-grid gap-2 d-md-block">
-  
+</div>
 <%= link_to 'Back', mybooks_path, class:"btn btn-secondary" %> 
-</div>  
-</div>
-</div>
-      </div>
-
-    </div>
+ </div>
   </body>
 </html>         
 

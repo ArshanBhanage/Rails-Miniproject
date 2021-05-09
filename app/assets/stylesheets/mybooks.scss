@@ -245,16 +245,7 @@ Book stuff
   padding: 10px 10px 0 10px;
   vertical-align: top;
   transition: height 1s;
-}
-/* star button */
-.book:after {
-  font-family: FontAwesome;
-  content: "\f006";
-  font-size: 35px;
-  position: relative;
-  left: -.1cm;
-  top: -1.6cm;
-  float: right;
+  border-style: groove;
 }
 
 .cover {

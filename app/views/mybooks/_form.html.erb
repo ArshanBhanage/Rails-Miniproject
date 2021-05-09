@@ -1,4 +1,4 @@
-<section class="login-form-wrap2">
+
 
 <%= form_with(model: mybook) do |form| %>
   <% if mybook.errors.any? %>
@@ -13,51 +13,44 @@
     </div>
   <% end %>
 
-  <div class="field">
-    
-    <%= form.text_field :title, class:"form-control", placeholder:"Title" %>
-  </div><br>
 
-  <div class="field">
-    
-    <%= form.file_field :image, class:"form-control" %>  
-  
+<div class="container login-container">
+            <div class="row">
+                <div class="col-md-6 login-form-1">
+                    <h3>New Book</h3>
+                    <form>
+                        <div class="form-group">
+                            <%= form.text_field :title, class:"form-control", placeholder:"Title" %>
+                        </div>
+                        <div class="form-group">
+                            <%= form.file_field :image, class:"form-control" %> 
+                        </div>
+                        
 
-     
-  </div><br>
+                        <div class="form-group">
+                            <%= form.text_field :description, class:"form-control", placeholder:"Sem" %> 
+                        </div>
+                        <div class="form-group">
+                            <%= form.text_field :email, class:"form-control", placeholder:"Price" %> 
+                        </div>
+                        <div class="form-group">
+                            <%= form.number_field :user_id, id: :mybook_user_id, class:"form-control", value: current_user.id, type: :hidden %> 
+                        </div>
 
-  <div class="field">
-
-    <%= form.text_field :description, class:"form-control", placeholder:"Book Description" %>
-  </div><br>
-
-  <div class="field">
-    
-    <%= form.text_field :email, class:"form-control", placeholder:"Instagram" %>
-  </div><br>
-
-<div class="field">
-    <%= form.number_field :user_id, id: :mybook_user_id, class:"form-control", value: current_user.id, type: :hidden %>
-  </div>
-  
-
-  <div class="field">
-    <%= form.text_field :phone,  class:"form-control", placeholder:"Phone" %>
-  </div><br>
-
-    <div class="field">
-    <%= form.text_field :sem,  class:"form-control", placeholder:"Sem" %>
-  </div><br>
-
-      <div class="field">
-    <%= form.text_field :price, class:"form-control", placeholder:"Price" %>
-
-   
-  </div><br>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+                        <div class="form-group">
+                            <%= form.text_field :phone,  class:"form-control", placeholder:"Phone" %>
+                        </div>
+                        
+                        <div class="form-group">
+                            
+                              <div class="actions" >
+                                 <%= form.submit class:"btnSubmit" %>
+                              </div><br>
+                              <%= link_to 'Back', mybooks_path, class:"btnSubmit" %>
+                        </div>
+                        
+                    </form>
+                </div>
 
 
 <% end %>

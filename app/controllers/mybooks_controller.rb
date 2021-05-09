@@ -7,6 +7,7 @@ class MybooksController < ApplicationController
     @q = Mybook.ransack(params[:q])
     @mybooks = @q.result
     
+    
   end
 
   # GET /mybooks/1 or /mybooks/1.json
@@ -14,7 +15,8 @@ class MybooksController < ApplicationController
   end
 
   def browse
-    @mybooks = Mybook.all
+
+   @mybooks = Mybook.all
     
   end
 

@@ -1,45 +1,50 @@
-<%# commented line %>
-<% if user_signed_in? %>
-<p id="notice"><%= notice %></p><br>
-    <h1> List of all books</h1>
-
+<p id="notice"><%= notice %></p>
+<br><br>
     <%= render 'home/header' %>
-
-          <% @mybooks.each do |mybook| %>
-
-
-
-      <div class="book read">
-        <div class="cover">
-          <%= image_tag mybook.image, class: "img img-fluid" %>
-        </div>
-        <div class="description", style="text-decoration: none">
-                 <p><%= link_to mybook.title, mybook, class:"btn default", style:"text-decoration: none" %>
-           <%#<span ><%= link_to mybook.description, class:"author" ></span>%></p>
-
-        </div>
-      </div>
+    <div class="container" style=" border-style: 2px solid black">
+<h1 style="color: black">My books</h1><br>
 
 
 
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Title:</th>
+      <th scope="col">Description:</th>
+      <th scope="col">Semester:</th>
+      <th scope="col">Price</th>
 
-
-
-
-
-  
-
-
-             
-
-        <%#<td><%= link_to 'Show details', mybook, class:"btn btn-primary"  %>
-          <% end %>
       
-    
+
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody >
+    <% @mybooks.each do |mybook| %>
+      <tr>
+        
+        <% if mybook.user == current_user %> 
+        <td ><%= mybook.title %></td>
+        
+        <td><%= mybook.description %></td>
+        <td><%= mybook.email %></td>
+        
+        <td><%= mybook.phone %></td>
+        
 
 
 
+        <td><%= link_to 'Show details', mybook, class:"btn btn-primary"  %></td>
+        <td><%= link_to 'Edit Book details', edit_mybook_path(mybook), class:"btn btn-success" %></td>
+        <td><%= link_to 'Delete', mybook, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-danger" %></td>
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
 
+<br>
 
-
-<% end %>
+<%= link_to 'Add new book', new_mybook_path, style:"color: magenta" %>
+</div>

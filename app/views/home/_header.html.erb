@@ -49,8 +49,9 @@ body {
 </style>
 </head>
 <body>
-
-<span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; </span>
+<div class="container" style="margin-left: 5px">
+<span style="font-size:30px;cursor:pointer; color: #0062cc " onclick="openNav()">&#9776; </span>
+</div>
 <div id="mySidenav" class="sidenav" >
   <a href="javascript:void(0)" class="closebtn1" onclick="closeNav()" style="color: #0062cc">&times;</a>
   <% if user_signed_in? %>
@@ -60,6 +61,7 @@ body {
   <% end %>
 
   <a href="#contact"><%= link_to 'About Us', home_about_path, style:"color: #0062cc" %></a>
+
 </div>
 
 
@@ -98,10 +100,10 @@ function closeNav() {
 
 
 
-<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+<nav class="navbar fixed-top navbar-expand-lg navbar-dark " style="background-color: #0062cc">
  
 <div class="container-fluid">
-  <%= link_to 'Book Bank', root_path, class:"navbar-brand", style:"font-size: 160%" %>
+  <%= link_to 'Book Bank', mybooks_path, class:"navbar-brand", style:"font-size: 140%" %>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -116,7 +118,7 @@ function closeNav() {
 
 
         <li class="nav-item">
-          <%= link_to 'My books', mybooks_path, class:'nav-link' %>
+          <%= link_to 'My books', browse_path, class:'nav-link' %>
         </li>
         <li class="nav-item">
           <%= link_to 'Add book', new_mybook_path, class:'nav-link' %>
@@ -138,12 +140,13 @@ function closeNav() {
 
       </ul>
       <form class="d-flex" >
-        <input class="form-control me-2"  type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
+ 
       </form>
     </div>
   </div>
 </nav><br>
+
+
 
 
 

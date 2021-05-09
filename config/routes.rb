@@ -4,9 +4,10 @@ Rails.application.routes.draw do
   resources :mybooks
   #get 'home/index'
   #root 'home#index'
-  root 'mybooks#browse'
+  root 'mybooks#index'
   get 'home/about'
-  get 'search', to: "mybooks#search"
+ 
+  get 'browse', to:"mybooks#browse"
   
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
