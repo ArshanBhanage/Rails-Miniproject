@@ -14,7 +14,7 @@ body {
   z-index: 1;
   top: 55px;
   left: 0;
-  background-color: #ffffff;
+  background-color: #639BD8;
   overflow-x: hidden;
   transition: 0.3s;
   padding-top: 60px;
@@ -25,7 +25,7 @@ body {
   padding: 8px 8px 8px 32px;
   text-decoration: none;
   font-size: 25px;
-  color: #ffffff;
+  color: #639BD8;
   display: block;
   transition: 0.3s;
 }
@@ -50,17 +50,21 @@ body {
 </head>
 <body>
 <div class="container" style="margin-left: 5px">
-<span style="font-size:30px;cursor:pointer; color: #0062cc " onclick="openNav()">&#9776; </span>
+
 </div>
 <div id="mySidenav" class="sidenav" >
-  <a href="javascript:void(0)" class="closebtn1" onclick="closeNav()" style="color: #0062cc">&times;</a>
+  <a href="javascript:void(0)" class="closebtn1" onclick="closeNav()" style="color: #ffffff">&times;</a>
   <% if user_signed_in? %>
-  <a href="#services" ><%= link_to 'Edit Profile', edit_user_registration_path, class:'nav-link', style:"color: #0062cc" %></a>
-  <a href="#clients"><%= link_to 'Sign Out', destroy_user_session_path, method: :delete, class:'nav-link', style:"color: #0062cc" %></a>
+        
+           <a href="#contact"><%= link_to 'My books', browse_path, style:"color: #ffffff" %></a>
+        
+        
+          <a href="#contact"><%= link_to 'Add book', new_mybook_path, style:"color: #ffffff" %></a>
+        
 
   <% end %>
 
-  <a href="#contact"><%= link_to 'About Us', home_about_path, style:"color: #0062cc" %></a>
+  <a href="#contact"><%= link_to 'About Us', home_about_path, style:"color: #ffffff" %></a>
 
 </div>
 
@@ -76,7 +80,70 @@ function closeNav() {
   document.getElementById("mySidenav").style.width = "0";
 }
 </script>
-   
+ 
+
+
+
+
+ <nav class="navbar fixed-top navbar-expand-lg navbar-dark " style="background-color: #0062cc">
+ 
+<div class="container-fluid">
+  <style>
+
+.p3 {
+  font-family: "Lucida Handwriting", "Courier New", cursive;
+  color: white;
+
+  hover {
+    color: white;
+    text-decoration: none;
+  }
+  
+}
+
+
+</style>
+  <span style="font-size:30px;cursor:pointer; color: #ffffff " onclick="openNav()">&#9776; </span>
+  <%= link_to 'Book Bank', mybooks_path, class:"p3", style:"font-size: 190%; margin-left: 600px; text-decoration: none; color: white " %>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+     
+
+        
+        
+      <% if user_signed_in? %>
+
+        <a href="#services" ><%= link_to 'Edit Profile', edit_user_registration_path, class:'p4', style:"margin-left: 400px; color: white; text-decoration: none"  %></a> 
+       <a href="#clients"><%= link_to 'Log Out', destroy_user_session_path, method: :delete, class:'p4', style:"; color: white; margin-left: 25px; text-decoration: none" %></a>
+
+
+
+      <% else %>
+          <li class="nav-item">
+          <%= link_to 'Sign Up', new_user_registration_path, class:'p4', style:"margin-left: 470px; color: white; text-decoration: none" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to 'Log In',new_user_session_path, class:'p4', style:"margin-left: 25px; color: white; text-decoration: none" %>
+        </li>
+
+        <% end %>
+        
+
+
+
+      </ul>
+      <form class="d-flex" >
+ 
+      </form>
+    </div>
+  </div>
+</nav><br>
+  
+
 </body>
 </html> 
 
@@ -100,51 +167,6 @@ function closeNav() {
 
 
 
-<nav class="navbar fixed-top navbar-expand-lg navbar-dark " style="background-color: #0062cc">
- 
-<div class="container-fluid">
-  <%= link_to 'Book Bank', mybooks_path, class:"navbar-brand", style:"font-size: 140%" %>
-
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-     
-
-        
-        
-      <% if user_signed_in? %>
-
-
-        <li class="nav-item">
-          <%= link_to 'My books', browse_path, class:'nav-link' %>
-        </li>
-        <li class="nav-item">
-          <%= link_to 'Add book', new_mybook_path, class:'nav-link' %>
-        </li>
-
-
-      <% else %>
-          <li class="nav-item">
-          <%= link_to 'Sign Up', new_user_registration_path, class:'nav-link' %>
-        </li>
-        <li class="nav-item">
-          <%= link_to 'Sign In',new_user_session_path , class:'nav-link' %>
-        </li>
-
-        <% end %>
-        
-
-
-
-      </ul>
-      <form class="d-flex" >
- 
-      </form>
-    </div>
-  </div>
-</nav><br>
 
 
 

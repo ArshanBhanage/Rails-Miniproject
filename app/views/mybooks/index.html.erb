@@ -1,17 +1,24 @@
 <%# commented line %>
 
 <p id="notice"><%= notice %></p><br>
-<% if user_signed_in? %>
-    <h1> List of all books</h1>
+
+
+
+
+
+
+
+
+    <h3 style="text-align: center;"> List of all books</h3>
 
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <%= render 'home/header' %>
     <div class="container" style="text-align: center;">
-            <%= search_form_for @q do |form| %>
-        <%= form.label :title_cont %>
-        <%= form.search_field :title_cont %>
+        <%= search_form_for @q do |form| %>
+
+        <%= form.search_field :title_cont, placeholder:"   Search by title" %>
         <%= form.submit %>
         <% end %>  
       </div>
@@ -23,15 +30,15 @@
 
       <div class="book read">
         <div class="cover">
-          <%= image_tag mybook.image, class: "img img-fluid" %>
+          <%= link_to (image_tag mybook.image), mybook, class: "img img-fluid" %>
         </div>
         <div class="description", style="text-decoration: none">
-                 <p style="margin-top: 3px"><%= link_to mybook.title, mybook, class:"btn default", style:"text-decoration: none" %>
-           <%#<span ><%= link_to mybook.description, class:"author" ></span>%><br><i style="font-size:24px; margin-bottom: 5px" class="fa">&#xf156;</i></p>
+                 <p style="margin-top: 3px"><%= link_to mybook.title, mybook, class:"btn default", style:"text-decoration: none; font-weight: bold" %>
+           <%#<span ><%= link_to mybook.description, class:"author" ></span>%><br></p>
 
         </div>
       </div>
-
+<% end %>
 
 
 
@@ -45,15 +52,13 @@
              
 
         <%#<td><%= link_to 'Show details', mybook, class:"btn btn-primary"  %>
-<% end %>
+
       
     
-
-
-
-
-
-
-<% end %>
 </div>
+
+
+
+
+
 

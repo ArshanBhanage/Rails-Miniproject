@@ -2,70 +2,88 @@
 
 <p id="notice"><%= notice %></p>
 <br><br>
-
+<% if user_signed_in? %>
     <%= render 'home/header' %>
 
-<!DOCTYPE html>
-<html>
 
-  <head>
-    
-    <!-- CSS property to place div
-      side by side -->
-    <style>
-      #leftbox {
-        float:left;
-        background:White;
-        width:35%;
-        height:450px;
-      }
-      #middlebox{
-        float:left;
-        background:White;
-        width:60%;
-        height:450px;
-      }
 
-      h1{
-        color:green;
-        text-align:center;
-      }
-    </style>
-  </head>
-  
-  <body>
-<div class="container">
-  <div class="container" style="float: left">
-    <%= image_tag(@mybook.image, height:"100%", width:"10%", class:"center") %>
-    </div>
-    <div class="container">
+  <div class="container" style="margin-left: 500px" >
+    <%= image_tag(@mybook.image, height:"300px", width:"20%", class:"center", style:"float: left; margin-right: 50px") %>
+ 
     <strong>Title:</strong>
   <%= @mybook.title %><br>
-</div><br>
+<br>
 
-<div class="container">
+
   <strong>Sem:</strong>
   <%= @mybook.description %><br>
-</div><br>
+<br>
 
 
 
-<div class="container">
+
     <strong>Price:</strong>
-  <%= @mybook.email %><br>
-</div><br>
-<div class="container">
+  <i style="font-size:24px; margin-bottom: 5px; margin-left: 3px" class="fa">&#xf156;</i><%= @mybook.email %><br>
+<br>
+
     <strong>Google Pay/ Whatsapp:</strong>
   <%= @mybook.phone %><br>
-</div>
-<%= link_to 'Back', mybooks_path, class:"btn btn-secondary" %> 
+
+<%= link_to 'Back', mybooks_path, class:"btn btn-secondary", style:"margin-top:85px; margin-bottom: 100px" %> 
  </div>
-  </body>
-</html>         
+        
 
 
+<% else %>
+<%= render 'home/header' %>
+<style>
+@import url('//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css');
+
+.info-msg,
+.success-msg,
+.warning-msg,
+.error-msg {
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 3px 3px 3px 3px;
+}
+.info-msg {
+  color: #059;
+  background-color: #BEF;
+}
+.success-msg {
+  color: #270;
+  background-color: #DFF2BF;
+}
+.warning-msg {
+  color: #9F6000;
+  background-color: #FEEFB3;
+}
+.error-msg {
+  color: #D8000C;
+  background-color: #FFBABA;
+}
+
+/* Just for CodePen styling - don't include if you copy paste */
+html {
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+  font-weight: 300;
+  margin: 25px;
+}
+body {
+  width: 100%;
+}
+</style>
+
+<div class="info-msg">
+  <i class="fa fa-info-circle"></i>
+  Login first!!
+</div>
 
 
+    <%= link_to "Login", new_user_session_path %>
+<br><br><br><br><br><br><br><br><br><br><br><br><br>
+<% end %>
 
 
 
